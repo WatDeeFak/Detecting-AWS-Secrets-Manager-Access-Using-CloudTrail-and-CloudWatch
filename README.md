@@ -1,1 +1,1 @@
-# Monitoring-AWS-Secrets-Manager-Access-with-CloudTrail-CloudWatch-and-SNS
+# Monitoring-AWS-Secrets-Manager-Access

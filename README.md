@@ -36,3 +36,76 @@ Step 3 – Verify Secret Configuration
 ![secret detail](image/secret-detail.png)
 Review the secret configuration to verify that it has been created successfully. Confirm the secret name, encryption settings, resource ARN, and current version before proceeding to the IAM configuration phase.
 
+## Phase 2 – Configure IAM Access Control
+Objective
+
+In this phase, we implement the principle of least privilege by creating IAM users with different permission levels. A custom IAM policy is used to grant only the minimum permissions required to access specific secrets in AWS Secrets Manager.
+
+Step 1 – Create IAM Users
+![user list](image/user-list.png)
+
+Create two IAM users to simulate different access scenarios:
+
+- user-developer – Authorized to retrieve secrets.
+- user-intern – No permissions assigned.
+
+These users will be used to validate both authorized and unauthorized access throughout the project.
+
+Step 2 – Create a Customer Managed IAM Policy
+![permission](image/permission.png)
+
+Create a customer managed IAM policy that allows only the required Secrets Manager actions:
+
+- secretsmanager:GetSecretValue
+- secretsmanager:DescribeSecret
+
+Limit the policy to the specific secrets created in Phase 1. This follows the principle of least privilege by granting access only to the required resources and actions.
+
+Step 3 – Attach the Policy to the Developer User
+![attach](image/attach.png)
+
+Attach the custom IAM policy only to user-developer. Leave user-intern without any Secrets Manager permissions to simulate an unauthorized user during the testing phase.
+
+Step 4 – Create Access Keys for AWS CLI
+![key1](image/key-1.png)
+
+Download the .csv file
+
+![key2](image/key-2.png)
+
+## Phase 3 – Validate Secret Access Using AWS CLI
+Objective
+
+In this phase, AWS CLI is used to validate IAM permissions by testing secret access with different IAM users. The tests demonstrate how the principle of least privilege controls access to AWS Secrets Manager.
+
+Step 1 – Install and Configure AWS CLI
+![cek cli](image/cek-cli.png)
+
+Download CLI
+
+![current user](image/current-user.png)
+
+Installing
+
+![CLI](image/CLI.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

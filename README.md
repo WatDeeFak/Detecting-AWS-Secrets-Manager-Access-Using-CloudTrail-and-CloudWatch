@@ -89,6 +89,13 @@ Installing
 
 ![CLI](image/CLI.png)
 
+Test aws --version
+
+![version](image/version-cli.png)
+
+Step 2 – Verify Developer Identity
+
+
 
 
 

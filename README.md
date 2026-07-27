@@ -93,8 +93,20 @@ Test aws --version
 
 ![version](image/version-cli.png)
 
-Step 2 – Verify Developer Identity
-
+## Step 2 – Verify Developer Identity
+1. type aws configure, and then login with access key that we just created
+![configure](image/caller-dev.png)
+2. type aws sts get caller identity, make sure which user we login
+![caller](image/caller-dev..png)
+3. type aws secretsmanager getsecretvalue secret id prod/database
+![secret](image/getsecret-dev.png)
+4. now, we try to login with user-intern
+![configure](image/configure-intern.png)
+5. try to getsecret
+![intern](image/getsecret-intern.png)
+6. and if we trying to list-secret, both user having 'Access Denied', in security world, you dont have to see full list of secret, if you have specific secret to open
+![list](image/list-dev.png)
+![list](image/list-intern.png)
 
 
 

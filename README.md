@@ -120,10 +120,10 @@ In this phase, we build an automated monitoring workflow to detect AWS Secrets M
 
 ## Step 1 – Create an AWS CloudTrail Trail
 Create new S3 bucket → Log file SSE-KMS encryption(enable) → Log file validation(enable) → SNS notification(disable) → CloudWatch Logs(enable)
-![trail overview](image/trail-overview.png)
+![trail overview](image4/trail-overview.png)
 Create a multi-Region CloudTrail trail to record AWS API activity. Enable CloudWatch Logs integration to allow CloudTrail events to be analyzed by CloudWatch Metric Filters.
 ## Step 2 – Create a CloudWatch Metric Filter
-![metric](image/metric-filter.png)
+![metric](image4/metric-filter.png)
 
 
 

@@ -154,7 +154,30 @@ Verify that:
 ![a](image4/5-e.png)
 
 # Phase 5 Validate the Monitoring Workflow
+Objective
 
+In this phase, we validate the complete monitoring pipeline by generating real AWS Secrets Manager API events. The tests confirm that CloudTrail records the activity, CloudWatch detects the event, CloudWatch Alarm changes state, and Amazon SNS successfully sends an email notification.
+
+## Step 1 – Generate a Secret Access Event
+Retrieve one of the secrets using the user-developer account. aws secretsmanager get-secret-value --secret-id prod/database
+
+![test again](image5/dev-sec.png)
+This generates a GetSecretValue API event that will be recorded by AWS CloudTrail.
+## Step 2 – Verify CloudTrail Logs
+Open CloudTrail Event History and verify that the GetSecretValue event has been successfully recorded.
+
+![trail](image5/dev-trail.png)
+This confirms that AWS CloudTrail is capturing Secrets Manager API activity before forwarding the logs to CloudWatch Logs.
+## Step 3 – Verify CloudWatch Alarm
+After CloudWatch Logs processes the event, the Metric Filter publishes a custom metric.
+
+![alarm](image5/alarm-on.png)
+CloudWatch Alarm evaluates the metric and changes its state from OK (or Insufficient Data) to ALARM, indicating that a secret access event has been detected.
+## Step 4 – Verify Amazon SNS Notification
+Once the alarm enters the ALARM state, Amazon SNS sends an email notification to the subscribed recipient.
+
+![email](image5/email-masuk.png)
+Receiving the email confirms that the monitoring workflow is functioning correctly from end to end.
 
 
 

@@ -24,7 +24,7 @@ Before starting this project, ensure you have:
 - Basic knowledge of AWS CloudTrail and CloudWatch
 
 # Phase 1 – Create and Manage Secrets
-##Step 1 – Create the First Secret
+## Step 1 – Create the First Secret
 ![Create Secret Wizard](image/secret-wizard.png)
 Create your first secret in AWS Secrets Manager using the Other type of secret option. Store the secret as a key-value pair and assign a meaningful name such as prod/database. This secret will represent a production database credential used later for access validation and monitoring.
 
@@ -113,7 +113,17 @@ and if we trying to list-secret, both user having 'Access Denied', in security w
 ![list](image/list-dev.png)
 ![list](image/list-intern.png)
 
-# Phase 4 
+# Phase 4 – Configure Secret Access Monitoring
+Objective
+
+In this phase, we build an automated monitoring workflow to detect AWS Secrets Manager access events. AWS CloudTrail records API activity, CloudWatch Logs stores the events, Metric Filters identify specific actions, CloudWatch Alarms evaluate the metrics, and Amazon SNS sends email notifications.
+
+## Step 1 – Create an AWS CloudTrail Trail
+Create new S3 bucket → Log file SSE-KMS encryption(enable) → Log file validation(enable) → SNS notification(disable) → CloudWatch Logs(enable)
+![trail overview](image/trail-overview.png)
+Create a multi-Region CloudTrail trail to record AWS API activity. Enable CloudWatch Logs integration to allow CloudTrail events to be analyzed by CloudWatch Metric Filters.
+## Step 2 – Create a CloudWatch Metric Filter
+![metric](image/metric-filter.png)
 
 
 

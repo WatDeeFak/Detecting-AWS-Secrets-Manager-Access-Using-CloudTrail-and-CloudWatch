@@ -96,19 +96,19 @@ Test aws --version
 ## Step 2 – Login to user-developer using access key
 type aws configure, and then login with access key that we just created
 ![configure](image/caller-dev.png)
-## step 3 - Verify Developer Identity
+## Step 3 - Verify Developer Identity
 type aws sts get caller identity, make sure which user we login
 ![caller](image/caller-dev..png)
-## step 4 - Test Authorized Secret Access
+## Step 4 - Test Authorized Secret Access
 type aws secretsmanager getsecretvalue secret id prod/database
 ![secret](image/getsecret-dev.png)
-## step 5 - Configure AWS CLI for the Intern User
+## Step 5 - Configure AWS CLI for the Intern User
 now, we try to login with user-intern
 ![configure](image/configure-intern.png)
-## step 6 - Test Unauthorized Secret Access
+## Step 6 - Test Unauthorized Secret Access
 try to getsecretvalue
 ![intern](image/getsecret-intern.png)
-## step 7 - Validate Least Privilege
+## Step 7 - Validate Least Privilege
 and if we trying to list-secret, both user having 'Access Denied', in security world, you dont have to see full list of secret, if you have specific secret to open
 ![list](image/list-dev.png)
 ![list](image/list-intern.png)
@@ -153,7 +153,7 @@ Verify that:
 ![a](image4/5-d.png)
 ![a](image4/5-e.png)
 
-# Phase 5
+# Phase 5 Validate the Monitoring Workflow
 
 
 

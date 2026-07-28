@@ -179,9 +179,35 @@ Once the alarm enters the ALARM state, Amazon SNS sends an email notification to
 ![email](image5/email-masuk.png)
 Receiving the email confirms that the monitoring workflow is functioning correctly from end to end.
 
+## Skills Demonstrated
 
+This project demonstrates several core Cloud Security and AWS operational skills, including:
 
+- AWS Secrets Manager
+- Identity and Access Management (IAM)
+- Principle of Least Privilege
+- AWS CLI
+- AWS CloudTrail
+- Amazon CloudWatch Logs
+- CloudWatch Metric Filters
+- CloudWatch Alarms
+- Amazon SNS
+- Security Monitoring
+- Audit Logging
+- Incident Detection
+- Security Concepts
 
+## This project applies several fundamental cloud security principles:
+
+- Least Privilege – Restrict access to only the required Secrets Manager actions.
+- Secrets Management – Store sensitive credentials securely instead of embedding them in applications.
+- Audit Logging – Record all Secrets Manager API activity using AWS CloudTrail. AWS records Secrets Manager API calls in CloudTrail, enabling investigation and audit of secret access.
+- Security Monitoring – Detect secret access events using CloudWatch Metric Filters and Alarms.
+- Automated Notification – Notify security teams automatically through Amazon SNS whenever monitored events occur.
+
+## Conclusion
+
+This project demonstrates how AWS native security services can be integrated to improve the visibility of sensitive credential access. By combining AWS Secrets Manager, IAM, CloudTrail, CloudWatch, and Amazon SNS, organizations can implement an automated monitoring workflow that strengthens auditability, supports security operations, and enables faster detection of potentially sensitive activities. AWS itself documents CloudTrail, CloudWatch, and SNS as core building blocks for monitoring Secrets Manager activity.
 
 
 
